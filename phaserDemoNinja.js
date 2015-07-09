@@ -17,7 +17,7 @@ function preload() {
 function create() {
 	
 	game.physics.startSystem(Phaser.Physics.NINJA);
-	game.physics.ninja.gravity = 2;
+	game.physics.ninja.gravity = 1;
 	game.physics.ninja.setBoundsToWorld();
 	
 	
@@ -56,7 +56,7 @@ function create() {
 	player = game.add.sprite(64, game.world.height - 150, 'dude');
 	game.physics.ninja.enable(player);
 	player.body.bounce = 0.5;
-	player.body.friction = 0;
+	player.body.friction = 0.5;
 	
 	player.body.collideWorldBounds = true;
 	
@@ -107,7 +107,7 @@ function update() {
 	}
 	
 	if (cursors.up.isDown) {
-		player.body.moveUp(150);
+		player.body.moveUp(350);
 	}
 	
 	
